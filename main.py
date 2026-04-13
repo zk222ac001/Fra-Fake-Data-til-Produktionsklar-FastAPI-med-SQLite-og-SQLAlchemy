@@ -1,6 +1,11 @@
 # skridt no 1 : importere FastAPI klassen fra fastapi biblioteket
 
+# Depends bruges til dependency injection (meget vigtigt i FastAPI)
+# Det betyder: Du kan “injecte” funktioner automatisk ,Typisk brugt til: (Database connection ,Authentication ,Shared logic)
 from fastapi import FastAPI , Depends
+
+# Session er din forbindelse til databasen i SQLAlchemy
+# Den bruges til at: --> Læse data (SELECT) --> Gemme data (INSERT) --> Opdatere data (UPDATE) --> Slette data (DELETE)
 from sqlalchemy.orm import Session
 from database import sessionLocal, engine
 import models , schemas
